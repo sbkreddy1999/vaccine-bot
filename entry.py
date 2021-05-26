@@ -41,6 +41,9 @@ while True:
             outfile.write("slots opening time: "+now.strftime("%H:%M:%S")+"\n")
             json.dump(data, outfile)
         time.sleep(3)
+        pygame.mixer.music.play(0)
+        while pygame.mixer.music.get_busy():
+            dummy = 1
         continue
     if(status==2):
         now = datetime.now()
